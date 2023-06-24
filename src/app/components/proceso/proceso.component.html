@@ -1,0 +1,29 @@
+<div>
+    <div>
+
+    </div>
+    <div>
+        <button routerLink="/add-proceso">Crear Tipo</button>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo Documento</th>
+                <th scope="col">Prefijo</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of infoTable">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.pro_nombre}}</td>
+                <td>{{item.pro_prefijo}}</td>
+                <td><button [routerLink]="['/edit-proceso', item.id]">Editar</button></td>
+                <td (click)="DeleteProceso(item.id)"><button>Eliminar</button></td>
+              </tr>             
+            </tbody>
+          </table>
+    </div>
+</div>
+
